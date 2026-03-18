@@ -1,0 +1,19 @@
+{
+  "name": "portifolio-paisagismo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eummilena/portifolio-paisagismo.git"
+  },
+  "author": "Milena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eummilena/portifolio-paisagismo/issues"
+  },
+  "homepage": "https://github.com/eummilena/portifolio-paisagismo#readme",
+  "description": ""
+}
