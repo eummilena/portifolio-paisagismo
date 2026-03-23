@@ -1,14 +1,11 @@
 import './App.css'
-import Description from './pages/Descrption/Description'
-import Header from './pages/Header/Header'
+import Rotas from './route/Rotas'
 
 function App() {
 
   return (
     <>
-      <Header />
-      <Description />
-
+      <Rotas />
     </>
   )
 }
