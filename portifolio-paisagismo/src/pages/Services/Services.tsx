@@ -18,40 +18,6 @@ const Services = () => {
                         />
                     </picture>
                 </article>
-                <article className='w-2/6 h-3/6 '>
-                    <picture>
-                        <source srcSet={foto} type="image/webp" />
-                        <img
-                            src={foto}
-                            alt="Background paisagismo com natureza integrada à arquitetura"
-                            loading="lazy"
-                            className=''
-                        />
-                    </picture>
-                </article>
-                <article className='w-2/6 h-3/6 '>
-                    <picture>
-                        <source srcSet={foto} type="image/webp" />
-                        <img
-                            src={foto}
-                            alt="Background paisagismo com natureza integrada à arquitetura"
-                            loading="lazy"
-                            className=''
-                        />
-                    </picture>
-                </article>
-                <article className='w-1/6 h-3/6 '>
-                    <picture>
-                        <source srcSet={foto} type="image/webp" />
-                        <img
-                            src={foto}
-                            alt="Background paisagismo com natureza integrada à arquitetura"
-                            loading="lazy"
-                            className=''
-                        />
-                    </picture>
-                </article>
-
             </div>
         </section>
     )
