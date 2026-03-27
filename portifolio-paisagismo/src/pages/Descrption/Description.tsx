@@ -3,7 +3,7 @@ import bg from '../../assets/Background/background.webp'
 const Description = () => {
     return (
         <section id="main-content" aria-label="Seção de descrição da empresa" className='bg-(--verdeEscuro) '>
-            <div className='hero px-12 py-8 flex flex-col gap-40 translate-y-12 relative z-10'>
+            <div className='hero px-10 pb-5 flex flex-col gap-30 translate-y-20 relative z-10'>
                 <picture>
                     <source srcSet={bg} type="image/webp" />
                     <img
@@ -14,16 +14,20 @@ const Description = () => {
                     />
                 </picture>
                 <div className='z-50'>
-                    <h1 className='text-(--branco) uppercase text-8xl font-bold leading-35'>
+                    <h1 className='title text-(--branco) uppercase text-8xl font-bold leading-35'>
                         <span className='text-(--verdeClaro1)'>Natureza</span>  pensada <br />para o seu espaço
                     </h1>
                     <p className='text-(--branco) text-3xl  font-medium'>Integração entre natureza e arquitetura urbana.</p>
                 </div>
-                <div className='flex flex-col items-start gap-4 z-50'>
-                    <button aria-label="Abrir formulário para solicitar orçamento" className='btn-primary bg-(--branco) py-2 px-3 uppercase text-(--VerdeEscuro-1) font-medium'>
+                <div className='flex flex-row flex-wrap items-end gap-4 z-50 mb-10'>
+                    <a href="https://wa.me/5561996051216"
+                        target="_blank"
+                        rel="noopener noreferrer" aria-label="Abre o whatsApp" className='btn-primary mt-8 px-8 py-3 rounded-full border border-white/20 text-(--verdeClaro)] 
+               hover:bg-white hover:text-black transition-all duration-300 
+               hover:scale-105'>
                         Solicitar Orçamento
-                    </button>
-                    <a href="#projetos" aria-label="Visualizar nossos projetos de paisagismo" className='btn-secondary text-(--branco) uppercase underline tracking-widest'>
+                    </a>
+                    <a href="#projetos" aria-label="Visualizar nossos projetos de paisagismo" className='btn-secondary text-(--branco) uppercase underline tracking-widest hover:opacity-80 transition'>
                         Ver projetos
                     </a>
                 </div>
