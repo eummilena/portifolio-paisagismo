@@ -1,11 +1,13 @@
-import { projectsData } from "../../data/Projects"
+import { lazy, Suspense } from "react";
+import { projectsData } from "../../data/DataProjects"
 import { useScrollReveal } from "../../hooks/useScrollReveal"
-import Portifolio from "../Portifolio/Portifolio"
 
+const Photos = lazy(() => import('../Portifolio/Portifolio'))
 
 const Projects = () => {
-    const { ref, isVisible } = useScrollReveal(0.1)
-    const dataImages = projectsData.slice(0, 7)
+    const { ref, isVisible } = useScrollReveal(0.1);
+    const dataImages = projectsData.slice(0, 7);
+
 
     return (
         <section id="projetos" className="bg-(--verdeClaro) py-30">
@@ -17,9 +19,12 @@ const Projects = () => {
                 </div>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10'>
-                {dataImages.map((project, index) => (
-                    <Portifolio key={project.id} project={project} index={index} />
-                ))}
+                <Suspense fallback={<div>Carregando...</div>}>
+                    {dataImages.map((project, index) => (
+                        <Photos key={project.id} project={project} index={index} />
+                    ))}
+                </Suspense>
+
             </div>
         </section>
     )

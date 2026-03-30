@@ -3,7 +3,7 @@ import instagram from '../../assets/instagram.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import email from '../../assets/email.svg'
 import Description from '../Descrption/Description'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import bg from '../../assets/Background/bg-services.webp'
 import { useEffect, useState } from 'react'
 import MenuMobile from '../../Components/MenuMobile'
@@ -14,7 +14,7 @@ const Header = () => {
 
     const location = useLocation();
 
-    const services = location.pathname === '/servicos'
+    const projeto = location.pathname === '/projeto'
     const home = location.pathname === '/'
 
     const [scrolled, setScrolled] = useState(false);
@@ -43,9 +43,9 @@ const Header = () => {
     return (
         <header
             id='inicio'
-            className={`  ${services ? ' header bg-cover bg-top bg-no-repeat relative h-96 flex flex-col justify-between' : null} '`}
+            className={`  ${projeto ? ' header bg-cover bg-top bg-no-repeat relative h-96 flex flex-col justify-between' : null} '`}
             role="banner"
-            style={{ backgroundImage: services ? `url(${bg})` : 'none' }}>
+            style={{ backgroundImage: projeto ? `url(${bg})` : 'none' }}>
             <nav className={`${menu ? 'ativo' : ''} 'menu flex flex-row justify-between '`} aria-label="Menu de navegação principal" aria-expanded={menu}>
 
                 {isMobile ? (
@@ -60,7 +60,6 @@ const Header = () => {
                 <ul className='menu-nav flex flex-row gap-4 uppercase items-center *:cursor-pointer z-50'>
                     <li><NavLink to="/" className='text-white hover:opacity-80 transition'>Início</NavLink></li>
                     <li className='text-white hover:opacity-80 transition' onClick={() => scrollTo("projetos")}>Projetos</li>
-                    <li><NavLink to="/servicos" className='text-white hover:opacity-80 transition'>Serviços</NavLink></li>
                     <li className='text-white hover:opacity-80 transition' onClick={() => scrollTo("contato")}>Contato</li>
                 </ul>
                 <NavLink to="/" className='logo-link z-40' aria-label="Logo Mauro Paisagismo - Ir para página inicial">
@@ -78,13 +77,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            {home ? <Description /> :
-                <div className='*:uppercase font-medium text-1xl z-50'>
-                    <Link to='/' >Início</Link> | {' '}
-                    <Link to='/servicos'>Serviços</Link>
-                </div>
-            }
-
+            {home ? <Description /> : null}
         </header>
     )
 }

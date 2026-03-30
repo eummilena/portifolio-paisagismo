@@ -1,27 +1,32 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from '../pages/Header/Header'
 import Projects from '../pages/Projects/Projects'
-import Services from '../pages/Services/Services'
 import Contact from '../pages/Contact/Contact'
 import Footer from '../pages/Footer/Footer'
+import ProjectDetails from '../pages/ProjectDetails/ProjectDetails'
+import ScrollToTop from '../hooks/useScrollTop'
 
 
 const Rotas = () => {
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Routes>
                 <Route path='/' element={
                     <>
                         <Header />
-                        <Projects />
-                        <Contact />
+                        <main>
+                            <Projects />
+                            <Contact />
+                        </main>
                         <Footer />
                     </>
                 }></Route>
-                <Route path='/servicos' element={
+                <Route path='/projeto/:id' element={
                     <>
                         <Header />
-                        <Services />
+                        <ProjectDetails />
+                        <Footer />
                     </>
                 }></Route>
             </Routes>

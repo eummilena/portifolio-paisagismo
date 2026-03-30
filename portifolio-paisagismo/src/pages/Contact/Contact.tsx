@@ -16,7 +16,6 @@ const Contact = () => {
                     Atendemos projetos residenciais e comerciais em Brasília e região.
                     Retorno rápido via WhatsApp.
                 </p>
-
             </div>
             <a
                 href="https://wa.me/5561996051216"

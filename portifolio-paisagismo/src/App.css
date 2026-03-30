@@ -13,6 +13,12 @@ html{
   --verdeAcizentado2:#C5CDB9;
   --verdeAcizentado3:#B6C3A0;
   scroll-behavior: smooth;
+
+
+   --primary: 28 25% 28%;
+    --primary-foreground: 40 20% 97%;
+     --background: 40 20% 97%;
+    --foreground: 30 10% 15%;
 }
 
 body{
@@ -84,9 +90,12 @@ transition: .2s;
   }
 }
 
+
+
 .animate-fade-up {
   animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
 
 .menu-hamburger{
   display: none;
@@ -113,6 +122,14 @@ transition: .2s;
 .animate-slide-in {
   animation: slide-in 0.3s ease forwards;
 }
+
+
+
+
+
+
+
+
 
 /* Ajuste para resolução 1366x768 sem scroll */
  @media (max-height: 800px) and (min-width: 1340px) {
