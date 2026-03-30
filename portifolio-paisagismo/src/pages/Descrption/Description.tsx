@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import bg from '../../assets/Background/background.webp'
 
 const Description = () => {
@@ -27,9 +28,8 @@ const Description = () => {
                hover:scale-105'>
                         Solicitar Orçamento
                     </a>
-                    <a href="#projetos" aria-label="Visualizar nossos projetos de paisagismo" className='btn-secondary text-(--branco) uppercase underline tracking-widest hover:opacity-80 transition'>
-                        Ver projetos
-                    </a>
+                    <NavLink to='/projetos' aria-label="Visualizar nossos projetos de paisagismo" className='btn-secondary text-(--branco) uppercase underline tracking-widest hover:opacity-80 transition'>  Ver projetos</NavLink>
+
                 </div>
             </div>
         </section>

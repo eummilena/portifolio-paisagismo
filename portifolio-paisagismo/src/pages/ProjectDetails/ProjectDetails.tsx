@@ -1,11 +1,12 @@
 import { useParams } from 'react-router-dom'
-import { projectsData } from '../../data/DataProjects';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { useData } from '../../context/DataContext';
 
 const ProjectDetails = () => {
     const { ref, isVisible } = useScrollReveal(0.1);
     const { id } = useParams();
-    const project = projectsData.find((item) => item.id === Number(id));
+    const { data } = useData();
+    const project = data?.find((item) => item.id === Number(id));
 
 
     if (!project) return <p className='text-center py-2 text-4xl uppercase text-(--verdeEscuro)'>Projeto não encontrado</p>

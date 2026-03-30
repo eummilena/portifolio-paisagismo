@@ -1,13 +1,11 @@
-import { lazy, Suspense } from "react";
-import { projectsData } from "../../data/DataProjects"
 import { useScrollReveal } from "../../hooks/useScrollReveal"
+import { useData } from "../../context/DataContext";
+import { Link } from "react-router-dom";
+import Photos from "../Portifolio/Photos";
 
-const Photos = lazy(() => import('../Portifolio/Portifolio'))
 
 const Projects = () => {
     const { ref, isVisible } = useScrollReveal(0.1);
-    const dataImages = projectsData.slice(0, 7);
-
 
     return (
         <section id="projetos" className="bg-(--verdeClaro) py-30">
@@ -18,12 +16,11 @@ const Projects = () => {
                     <h2 className="text-(--VerdeEscuro1) font-medium text-5xl tracking-widest uppercase ">Serviços</h2>
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10'>
-                <Suspense fallback={<div>Carregando...</div>}>
-                    {dataImages.map((project, index) => (
-                        <Photos key={project.id} project={project} index={index} />
-                    ))}
-                </Suspense>
+            <div className="flex flex-col">
+                <Photos />
+                <Link to="/projetos" className="p-2 bg-(--verdeEscuro2) text-(--branco) mt-10 self-center  rounded-full uppercase border border-white/20 text-(--verdeClaro) 
+                 transition-all duration-300 
+               hover:scale-105">Ver todos</Link>
 
             </div>
         </section>

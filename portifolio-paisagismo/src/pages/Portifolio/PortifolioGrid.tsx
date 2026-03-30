@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import type { projectsData } from '../../data/DataProjects';
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 
-const Portifolio = ({ project, index }: { project: typeof projectsData[0], index: number }) => {
+const PortifolioGrid = ({ project, index }: { project: typeof projectsData[0], index: number }) => {
     const { ref, isVisible } = useScrollReveal(0.1);
     const tall = index === 0 || index === 4;
     const navigate = useNavigate();
@@ -42,4 +42,4 @@ const Portifolio = ({ project, index }: { project: typeof projectsData[0], index
     )
 }
 
-export default Portifolio
+export default PortifolioGrid

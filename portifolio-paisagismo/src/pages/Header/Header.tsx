@@ -59,7 +59,7 @@ const Header = () => {
 
                 <ul className='menu-nav flex flex-row gap-4 uppercase items-center *:cursor-pointer z-50'>
                     <li><NavLink to="/" className='text-white hover:opacity-80 transition'>Início</NavLink></li>
-                    <li className='text-white hover:opacity-80 transition' onClick={() => scrollTo("projetos")}>Projetos</li>
+                    <li className='text-white hover:opacity-80 transition'><NavLink to="/projetos">Projetos</NavLink></li>
                     <li className='text-white hover:opacity-80 transition' onClick={() => scrollTo("contato")}>Contato</li>
                 </ul>
                 <NavLink to="/" className='logo-link z-40' aria-label="Logo Mauro Paisagismo - Ir para página inicial">
