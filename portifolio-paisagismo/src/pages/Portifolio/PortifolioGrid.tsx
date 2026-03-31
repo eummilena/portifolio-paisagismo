@@ -28,7 +28,7 @@ const PortifolioGrid = ({ project, index }: { project: typeof projectsData[0], i
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-500 " />
                 <div className="info-project absolute bottom-0 left-0 right-0 p-6 translate-y-4 *:text-(--branco) opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <p className='text-lg'>Clique para ver mais</p>
+                    <p className={`text-lg ${tall ? "-translate-y-80" : "-translate-y-40"}  translate-x-45`}>Clique para ver mais</p>
                     <p className="text-xs tracking-[0.2em] uppercase  mb-1">
                         {project.location}
                     </p>

@@ -1,11 +1,11 @@
 import { useScrollReveal } from "../../hooks/useScrollReveal"
-import { useData } from "../../context/DataContext";
 import { Link } from "react-router-dom";
 import Photos from "../Portifolio/Photos";
 
 
 const Projects = () => {
     const { ref, isVisible } = useScrollReveal(0.1);
+
 
     return (
         <section id="projetos" className="bg-(--verdeClaro) py-30">
@@ -18,7 +18,7 @@ const Projects = () => {
             </div>
             <div className="flex flex-col">
                 <Photos />
-                <Link to="/projetos" className="p-2 bg-(--verdeEscuro2) text-(--branco) mt-10 self-center  rounded-full uppercase border border-white/20 text-(--verdeClaro) 
+                <Link to="/projetos" className="p-2 mr-10 text-(--verdeEscuro2)  mt-10 self-end  rounded-full uppercase underline  border border-white/20 text-(--verdeClaro) 
                  transition-all duration-300 
                hover:scale-105">Ver todos</Link>
 

@@ -39,19 +39,20 @@ const Photos = () => {
     }, [isHome])
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10 '>
-            <Suspense fallback={<div className='text-center p-5'>Carregando...</div>}>
-                {projectsToShow ? (
-                    projectsToShow.map((project, index) => (
-                        <Photo key={project.id} project={project} index={index} />
-                    ))
-                ) : <p>Erro na exibição das imagens</p>}
+        <>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10 '>
+                <Suspense fallback={<div className='text-center p-5'>Carregando...</div>}>
+                    {projectsToShow ? (
+                        projectsToShow.map((project, index) => (
+                            <Photo key={project.id} project={project} index={index} />
+                        ))
+                    ) : <p>Erro na exibição das imagens</p>}
 
-            </Suspense>
+                </Suspense>
+            </div>
+
             {!isHome && <div ref={loaderRef} className='h-10' />}
-
-        </div>
-
+        </>
     )
 }
 

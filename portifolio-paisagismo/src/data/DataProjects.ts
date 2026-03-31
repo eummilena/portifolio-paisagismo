@@ -15,7 +15,9 @@ export const projectsData: ProjectItem[] = [
     images: [
       '/images/IMG-20230213-WA0016.jpeg',
       '/images/IMG-20230213-WA0016.jpeg',
-      '/images/IMG-20230213-WA0016.jpeg'
+      '/images/IMG-20230213-WA0016.jpeg',
+      '/images/IMG-20230213-WA0028.jpeg',
+      '/images/IMG-20230213-WA0032.jpeg',
     ]
   },
   {

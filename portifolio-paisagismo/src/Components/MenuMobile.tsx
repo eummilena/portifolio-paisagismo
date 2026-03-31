@@ -1,6 +1,3 @@
-
-
-
 function MenuMobile({ menu, setMenu }: { menu: boolean, setMenu: React.Dispatch<React.SetStateAction<boolean>> }) {
 
     function handleClick() {

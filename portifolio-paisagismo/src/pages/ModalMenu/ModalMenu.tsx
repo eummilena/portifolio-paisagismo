@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const ModalMenu = ({ setMenu }: { setMenu: React.Dispatch<React.SetStateAction<boolean>> }) => {
 
@@ -14,9 +15,8 @@ const ModalMenu = ({ setMenu }: { setMenu: React.Dispatch<React.SetStateAction<b
                 <div className="modal-nav absolute top-0 right-0 w-72 h-full bg-(--VerdeEscuro-2) p-8 flex flex-col justify-between animate-slide-in">
                     <div>
                         <nav className="flex flex-col gap-6 text-lg text-(--verdeClaro)">
-                            <a href="#home" onClick={() => setMenu(false)}>Início</a>
-                            <a href="#projetos" onClick={() => setMenu(false)}>Projetos</a>
-                            <a href="#contato" onClick={() => setMenu(false)}>Contato</a>
+                            <NavLink to="/" onClick={() => setMenu(false)}>Início</NavLink>
+                            <NavLink to="/projetos" onClick={() => setMenu(false)}>Projetos</NavLink>
                         </nav>
                     </div>
 

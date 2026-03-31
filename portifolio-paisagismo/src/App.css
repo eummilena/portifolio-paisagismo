@@ -21,6 +21,10 @@ html{
     --foreground: 30 10% 15%;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body{
   font-family: Roboto,system-ui, sans-serif ;
   line-height: 1.6;
@@ -126,7 +130,11 @@ transition: .2s;
 
 
 
-
+@keyframes zoom {
+  to {
+    transform: scale(1);
+  }
+}
 
 
 
@@ -165,16 +173,11 @@ transition: .2s;
   .hero p {
     font-size: 1rem;
   }
-
-
-
   
 }
 
 @media (max-width:900px) {
-  .menu{
-  gap: 2rem;
-}
+ 
   .menu-hamburger{
     display: block;
     border: none;
@@ -185,9 +188,6 @@ transition: .2s;
      border-radius: .2em;
   }
 
-  .menu-nav,.menu-social-media{
-    display: none;
-  }
      .hamburger {
     position: absolute;
     width: 40px;
@@ -244,6 +244,11 @@ transition: .2s;
      transition: .2s;
      background-color: var(--verdeClaro-2);
  }
+
+  .logo-link{
+    margin-left: 15em;
+  } 
+
 }
 
 @media (max-width:460px) {
