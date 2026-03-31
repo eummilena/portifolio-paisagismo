@@ -36,7 +36,7 @@ const ProjectDetails = () => {
                     />
                 ))}
             </div>
-            {currentIndex && <ModalProject currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} images={project.images} />}
+            {currentIndex !== null && <ModalProject currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} images={project.images} />}
 
         </section>
     )
