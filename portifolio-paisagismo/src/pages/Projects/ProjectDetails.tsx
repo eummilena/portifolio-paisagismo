@@ -19,7 +19,7 @@ const ProjectDetails = () => {
     return (
         <section ref={ref} className="bg-(--verdeClaro) pt-20 pb-12">
             <hr className=" text-(--verdeEscuro2) border" />
-            <div className='pl-2'>
+            <div className='pl-8'>
                 <h2 className="text-(--VerdeEscuro1) font-medium text-2xl sm:text-3xl md:text-5xl  tracking-widest uppercase mt-4">
                     {project.title}
                 </h2>
