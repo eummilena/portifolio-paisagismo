@@ -8,20 +8,50 @@ const Projects = () => {
 
 
     return (
-        <section id="projetos" className="bg-(--verdeClaro) py-30">
-            <div ref={ref} className={`mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
-                <hr className=" text-(--verdeAcizentado) border" />
-                <div className="flex flex-col p-6 px-10 mt-4">
-                    <p className="text-(--verdeEscuro2) uppercase font-medium">Nossos</p>
-                    <h2 className="text-(--VerdeEscuro1) font-medium text-5xl tracking-widest uppercase ">Serviços</h2>
+        <section id="projetos" className="bg-(--verdeClaro) py-16 md:py-24 lg:py-30">
+            <div
+                ref={ref}
+                className={`mb-10 md:mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}
+            >
+                <hr className="text-(--verdeAcizentado) border" />
+
+                <div className="flex flex-col px-4 sm:px-6 md:px-10 mt-4 text-center md:text-left">
+                    <p className="text-(--verdeEscuro2) uppercase font-medium text-sm md:text-base">
+                        Nossos
+                    </p>
+
+                    <h2 className="text-(--VerdeEscuro1) font-medium 
+        text-2xl sm:text-3xl md:text-5xl 
+        tracking-widest uppercase">
+                        Serviços
+                    </h2>
                 </div>
             </div>
+
+            {/* GRID */}
             <div className="flex flex-col">
                 <Photos />
-                <Link to="/projetos" className="p-2 mr-10 text-(--verdeEscuro2)  mt-10 self-end  rounded-full uppercase underline  border border-white/20 text-(--verdeClaro) 
-                 transition-all duration-300 
-               hover:scale-105">Ver todos</Link>
 
+                {/* BOTÃO */}
+                <Link
+                    to="/projetos"
+                    className="
+        mt-8 md:mt-10
+        self-center md:self-end
+        px-4 py-2 md:mr-10
+        rounded-full uppercase underline
+
+        text-(--verdeEscuro2)
+        border border-white/20
+
+        transition-all duration-300
+
+        active:scale-95 active:opacity-70
+        md:hover:scale-105
+      "
+                >
+                    Ver todos
+                </Link>
             </div>
         </section>
     )

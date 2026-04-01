@@ -23,13 +23,12 @@ const Description = () => {
                 <div className='flex flex-row flex-wrap items-end gap-4 z-50 mb-10'>
                     <a href="https://wa.me/5561996051216"
                         target="_blank"
-                        rel="noopener noreferrer" aria-label="Abre o whatsApp" className='btn-primary mt-8 px-8 py-3 rounded-full border border-white/20 text-(--verdeClaro)] 
-               hover:bg-white hover:text-black transition-all duration-300 
-               hover:scale-105'>
+                        rel="noopener noreferrer" aria-label="Abre o whatsApp" className=' btn-primary mt-8 px-8 py-3 rounded-full border border-white/20 
+                    text-(--verdeClaro) transition-all duration-300 active:scale-95 active:bg-white active:text-black md:hover:scale-105 md:hover:bg-white md:hover:text-black'>
                         Solicitar Orçamento
                     </a>
-                    <NavLink to='/projetos' aria-label="Visualizar nossos projetos de paisagismo" className='btn-secondary text-(--branco) uppercase underline tracking-widest hover:opacity-80 transition'>  Ver projetos</NavLink>
-
+                    <NavLink to='/projetos' aria-label="Visualizar nossos projetos de paisagismo" className=' btn-secondary text-(--branco) uppercase underline 
+                    tracking-widest transition active:opacity-60 md:hover:opacity-80 ml-2'> Ver projetos</NavLink>
                 </div>
             </div>
         </section>
