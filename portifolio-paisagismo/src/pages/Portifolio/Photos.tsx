@@ -9,7 +9,7 @@ const Photos = () => {
     const location = useLocation();
     const { data } = useData();
     const isHome = location.pathname === '/';
-    const isProjects = location.pathname === '/projetos';
+
 
 
     const [visibleItems, setVisibleItems] = useState(6);

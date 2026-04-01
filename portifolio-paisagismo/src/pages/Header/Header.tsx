@@ -8,7 +8,7 @@ const Header = () => {
 
     const location = useLocation();
 
-    const projeto = location.pathname === '/projeto'
+    const projeto = location.pathname === '/projetos'
     const home = location.pathname === '/'
 
 

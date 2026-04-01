@@ -73,9 +73,7 @@ header{
   z-index: 1;
 }
 
-.header::before{
-    filter: blur(2px);
-}
+
 
 button:hover{
 background-color: #ffffff69;
