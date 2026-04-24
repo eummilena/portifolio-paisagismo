@@ -23,7 +23,9 @@ if (fs.existsSync(folder)) {
     };
   });
 } else {
-  console.warn(`Warning: gallery directory not found at ${folder}. Generating empty projects.json.`);
+  console.warn(
+    `Warning: gallery directory not found at ${folder}. Generating empty projects.json.`,
+  );
 }
 
 fs.writeFileSync(output, JSON.stringify(projects, null, 2));
