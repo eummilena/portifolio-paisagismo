@@ -48,7 +48,7 @@ const Nav = () => {
 
 
                 (<>
-                    <ul className='menu-nav flex flex-row gap-4 uppercase items-center *:cursor-pointer z-100'>
+                    <ul className='menu-nav flex flex-row gap-4 uppercase items-center *:cursor-pointer z-50'>
                         <li><NavLink to="/" className='text-white hover:opacity-80 transition'>Início</NavLink></li>
                         <li className={`${isProjects ? 'underline' : ''} text-white hover:opacity-80 transition`}><NavLink to="/projetos">Projetos</NavLink></li>
                         {isHome ? <li className='text-white hover:opacity-80 transition' onClick={() => scrollTo("contato")}>Contato</li> : null}

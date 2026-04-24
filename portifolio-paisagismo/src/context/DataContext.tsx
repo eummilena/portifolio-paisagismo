@@ -1,9 +1,8 @@
-import React, { Children, createContext, useContext, useState, type PropsWithChildren } from 'react'
+import { createContext, useContext, type PropsWithChildren } from 'react'
 import { projectsData, type ProjectItem } from '../data/DataProjects'
 
 type IDataContext = {
     data: ProjectItem[] | null;
-
 }
 
 const DataContext = createContext<IDataContext | null>(null);
@@ -15,8 +14,7 @@ export const useData = () => {
 }
 
 export const DataContextProvider = ({ children }: PropsWithChildren) => {
-    const data = projectsData.map(item => item);
-    const [loading, setLoading] = useState(false);
+    const data = projectsData;
 
     return (
         <DataContext.Provider value={{ data }}>

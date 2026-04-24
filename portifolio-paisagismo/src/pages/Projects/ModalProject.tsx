@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 
 type ModalProps = {
@@ -32,7 +32,6 @@ const ModalProject = ({ currentIndex, setCurrentIndex, images }: ModalProps) => 
     const isLast = currentIndex === images.length - 1
 
     const touchStartX = useRef(0)
-    const touchEndX = useRef(0)
 
     const handleTouchStart = (e: React.TouchEvent) => {
         touchStartX.current = e.touches[0].clientX
@@ -63,11 +62,28 @@ const ModalProject = ({ currentIndex, setCurrentIndex, images }: ModalProps) => 
             prevImage()
         }
 
-        // 👉 volta suave
+        //  volta suave
         setTranslateX(0)
         setIsDragging(false)
     }
 
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setCurrentIndex(null)
+                return
+            }
+            if (event.key === 'ArrowRight' && currentIndex !== null && currentIndex < images.length - 1) {
+                nextImage()
+            }
+            if (event.key === 'ArrowLeft' && currentIndex !== null && currentIndex > 0) {
+                prevImage()
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyDown)
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [currentIndex, images.length])
 
     return (
         <div>
@@ -91,29 +107,38 @@ const ModalProject = ({ currentIndex, setCurrentIndex, images }: ModalProps) => 
                         >
                             <img
                                 src={images[currentIndex]}
+                                alt={`Foto ${currentIndex + 1} do projeto`}
                                 className="max-w-[90vw] max-h-[90vh] object-contain"
                             />
 
                             {/* BOTÃO FECHAR */}
                             <button
+                                type="button"
                                 className="absolute top-4 right-4 text-white text-3xl"
                                 onClick={() => setCurrentIndex(null)}
+                                aria-label="Fechar modal de imagem"
                             >
                                 ✕
                             </button>
 
                             {/* ESQUERDA */}
                             <button
+                                type="button"
                                 className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl cursor-grab active:cursor-grabbing hidden md:block active:scale-95"
-                                onClick={prevImage} disabled={isFirst}
+                                onClick={prevImage}
+                                disabled={isFirst}
+                                aria-label="Imagem anterior"
                             >
                                 ‹
                             </button>
 
                             {/* DIREITA */}
                             <button
+                                type="button"
                                 className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl cursor-grab active:cursor-grabbing hidden md:block active:scale-95"
-                                onClick={nextImage} disabled={isLast}
+                                onClick={nextImage}
+                                disabled={isLast}
+                                aria-label="Próxima imagem"
                             >
                                 ›
                             </button>

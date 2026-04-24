@@ -7,6 +7,7 @@ import ProjectDetails from '../pages/Projects/ProjectDetails'
 import ScrollToTop from '../hooks/useScrollTop'
 import { DataContextProvider } from '../context/DataContext'
 import AllProjects from '../pages/Projects/AllProjects'
+import Error from '../pages/Error/Error'
 
 
 const Rotas = () => {
@@ -28,7 +29,9 @@ const Rotas = () => {
                     <Route path='/projeto/:id' element={
                         <>
                             <Header />
-                            <ProjectDetails />
+                            <main>
+                                <ProjectDetails />
+                            </main>
                             <Footer />
                         </>
                     }></Route>
@@ -39,6 +42,12 @@ const Rotas = () => {
                             <Footer />
                         </>
                     }></Route>
+                    <Route path="*" element={
+                        <>
+                            <Header />
+                            <Error />
+                        </>
+                    } />
                 </Routes>
             </DataContextProvider>
         </BrowserRouter>
