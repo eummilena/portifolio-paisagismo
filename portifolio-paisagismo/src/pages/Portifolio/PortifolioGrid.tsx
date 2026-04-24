@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import type { projectsData } from '../../data/DataProjects';
+import type { ProjectItem } from '../../data/DataProjects';
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { useState } from 'react';
 
-const PortifolioGrid = ({ project, index }: { project: typeof projectsData[0], index: number }) => {
+const PortifolioGrid = ({ project, index }: { project: ProjectItem, index: number }) => {
     const { ref, isVisible } = useScrollReveal(0.1);
     const tall = index === 0 || index === 4;
     const navigate = useNavigate();
@@ -20,7 +20,7 @@ const PortifolioGrid = ({ project, index }: { project: typeof projectsData[0], i
                 ${isVisible ? "animate-fade-up" : "opacity-0"}
             `}
             style={{ animationDelay: `${index * 80}ms` }}
-            onClick={() => navigate(`/projeto/${project.id}`)}
+            onClick={() => navigate(`/projeto/${project.slug}`)}
             onTouchStart={() => setTouched(true)}
             onTouchEnd={() => setTouched(false)}
         >

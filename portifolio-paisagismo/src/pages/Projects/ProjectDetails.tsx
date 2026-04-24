@@ -6,12 +6,9 @@ import ModalProject from './ModalProject';
 
 const ProjectDetails = () => {
     const { ref, isVisible } = useScrollReveal(0.1);
-    const { id } = useParams();
+    const { slug } = useParams();
     const { data } = useData();
-    const projectId = Number(id);
-    const project = !Number.isNaN(projectId)
-        ? data?.find((item) => item.id === projectId)
-        : undefined;
+    const project = data?.find((item) => item.slug === slug);
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
     if (!project) return <p className='text-center py-2 text-4xl uppercase text-(--verdeEscuro)'>Projeto não encontrado</p>

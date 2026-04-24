@@ -11,6 +11,15 @@ collections:
     folder: "content/galeria"
     create: true
     slug: "{{slug}}"
+    format: "json"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Imagem", name: "image", widget: "image" }
+
+      - { label: "Localização", name: "location", widget: "string", required: false }
+
+      - { label: "Capa", name: "cover", widget: "image" }
+
+      - label: "Imagens"
+        name: "images"
+        widget: "list"
+        field: { label: "Imagem", name: "image", widget: "image" }

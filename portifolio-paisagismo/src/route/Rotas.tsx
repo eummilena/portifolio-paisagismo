@@ -26,7 +26,7 @@ const Rotas = () => {
                             <Footer />
                         </>
                     }></Route>
-                    <Route path='/projeto/:id' element={
+                    <Route path='/projeto/:slug' element={
                         <>
                             <Header />
                             <main>

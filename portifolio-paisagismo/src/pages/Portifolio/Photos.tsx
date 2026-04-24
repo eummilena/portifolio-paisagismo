@@ -38,6 +38,7 @@ const Photos = () => {
         }
     }, [isHome])
 
+    if (!data) return <p className='text-center py-2 text-4xl uppercase text-(--verdeEscuro)'>Não há fotos</p>
     return (
         <>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10 '>

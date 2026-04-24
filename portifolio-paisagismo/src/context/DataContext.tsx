@@ -1,5 +1,5 @@
-import { createContext, useContext, type PropsWithChildren } from 'react'
-import { projectsData, type ProjectItem } from '../data/DataProjects'
+import { createContext, useContext, type PropsWithChildren, useEffect, useState } from 'react'
+import { getProjects, type ProjectItem } from '../data/DataProjects'
 
 type IDataContext = {
     data: ProjectItem[] | null;
@@ -14,7 +14,11 @@ export const useData = () => {
 }
 
 export const DataContextProvider = ({ children }: PropsWithChildren) => {
-    const data = projectsData;
+    const [data, setData] = useState<ProjectItem[] | null>(null);
+
+    useEffect(() => {
+        getProjects().then(setData).catch(console.error);
+    }, []);
 
     return (
         <DataContext.Provider value={{ data }}>
