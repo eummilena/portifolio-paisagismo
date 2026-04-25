@@ -48,22 +48,18 @@ const Nav = () => {
 
 
                 (<>
+                    <NavLink to="/" className='logo-link z-40' aria-label="Logo Mauro Paisagismo - Ir para página inicial">
+                        <img src={logo} alt="Logo Mauro Paisagismo" className="h-20 md:h-12 w-auto" />
+                    </NavLink>
                     <ul className='menu-nav flex flex-row gap-4 uppercase items-center *:cursor-pointer z-50'>
                         <li><NavLink to="/" className='text-white hover:opacity-80 transition'>Início</NavLink></li>
                         <li className={`${isProjects ? 'underline' : ''} text-white hover:opacity-80 transition`}><NavLink to="/projetos">Projetos</NavLink></li>
                         {isHome ? <li className='text-white hover:opacity-80 transition' onClick={() => scrollTo("contato")}>Contato</li> : null}
                     </ul>
-                    <NavLink to="/" className='logo-link z-40' aria-label="Logo Mauro Paisagismo - Ir para página inicial">
-                        <img src={logo} alt="Logo Mauro Paisagismo" className=' w-3xs' />
-                    </NavLink>
+
                     <ul className='menu-social-media flex flex-row gap-4 uppercase items-center z-50'>
                         <li><a href="https://www.instagram.com/mauropaisagista?igsh=aDBqcW8ybHpyeGVq" target="_blank" rel="noopener noreferrer" aria-label="Visite nosso Instagram"><img src={instagram} alt="Ícone Instagram" className='w-6 h-6' /></a></li>
                         <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="Envie mensagem no WhatsApp"><img src={whatsapp} alt="Ícone WhatsApp" className='w-6 h-6' /></a></li>
-                        <li><a href="mailto:mauroluciomotta@gmail.com" target="_blank" rel="noopener noreferrer"
-                        >
-                            <img src={email} alt="Envie nos um e-mail" className="w-7 h-7" />
-                        </a>
-                        </li>
                     </ul>
                 </>)
             }
