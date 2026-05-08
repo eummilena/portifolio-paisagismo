@@ -1,7 +1,7 @@
 
 import Description from '../Descrption/Description'
 import { useLocation } from 'react-router-dom'
-import bg from '../../assets/Background/bg-services.webp'
+import bg from '../../assets/Background/optimized/bg-services.webp'
 import Nav from '../Nav/Nav'
 
 const Header = () => {

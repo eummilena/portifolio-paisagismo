@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import bg from '../../assets/Background/background.webp'
+import bg from '../../assets/Background/optimized/background.webp'
 
 const Description = () => {
     return (

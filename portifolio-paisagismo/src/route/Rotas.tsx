@@ -1,13 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 import Header from '../pages/Header/Header'
-import Projects from '../pages/Projects/Projects'
-import Contact from '../pages/Contact/Contact'
 import Footer from '../pages/Footer/Footer'
-import ProjectDetails from '../pages/Projects/ProjectDetails'
 import ScrollToTop from '../hooks/useScrollTop'
 import { DataContextProvider } from '../context/DataContext'
-import AllProjects from '../pages/Projects/AllProjects'
-import Error from '../pages/Error/Error'
+
+const Projects = lazy(() => import('../pages/Projects/Projects'))
+const Contact = lazy(() => import('../pages/Contact/Contact'))
+const ProjectDetails = lazy(() => import('../pages/Projects/ProjectDetails'))
+const AllProjects = lazy(() => import('../pages/Projects/AllProjects'))
+const Error = lazy(() => import('../pages/Error/Error'))
 
 
 const Rotas = () => {
@@ -15,40 +17,42 @@ const Rotas = () => {
         <BrowserRouter>
             <DataContextProvider>
                 <ScrollToTop />
-                <Routes>
-                    <Route path='/' element={
-                        <>
-                            <Header />
-                            <main>
-                                <Projects />
-                                <Contact />
-                            </main>
-                            <Footer />
-                        </>
-                    }></Route>
-                    <Route path='/projeto/:slug' element={
-                        <>
-                            <Header />
-                            <main>
-                                <ProjectDetails />
-                            </main>
-                            <Footer />
-                        </>
-                    }></Route>
-                    <Route path='/projetos' element={
-                        <>
-                            <Header />
-                            <AllProjects />
-                            <Footer />
-                        </>
-                    }></Route>
-                    <Route path="*" element={
-                        <>
-                            <Header />
-                            <Error />
-                        </>
-                    } />
-                </Routes>
+                <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div>Carregando...</div></div>}>
+                    <Routes>
+                        <Route path='/' element={
+                            <>
+                                <Header />
+                                <main>
+                                    <Projects />
+                                    <Contact />
+                                </main>
+                                <Footer />
+                            </>
+                        }></Route>
+                        <Route path='/projeto/:slug' element={
+                            <>
+                                <Header />
+                                <main>
+                                    <ProjectDetails />
+                                </main>
+                                <Footer />
+                            </>
+                        }></Route>
+                        <Route path='/projetos' element={
+                            <>
+                                <Header />
+                                <AllProjects />
+                                <Footer />
+                            </>
+                        }></Route>
+                        <Route path="*" element={
+                            <>
+                                <Header />
+                                <Error />
+                            </>
+                        } />
+                    </Routes>
+                </Suspense>
             </DataContextProvider>
         </BrowserRouter>
     )
