@@ -138,10 +138,7 @@ Site desenvolvido para apresentação de projetos de paisagismo, com foco em vis
 </html>
 
 
-## 🌐 Deploy
 
-Projeto publicado na Netlify:
-👉 (https://mauropaisagismo.netlify.app/)
 
 ## 📦 Como rodar o projeto
 
